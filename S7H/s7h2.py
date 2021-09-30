@@ -1,6 +1,7 @@
 # Tahereh Mohammadi - Thursday 14-18
 # sort the list in accending
 
+# 1st solution: without knowing default letter ranking:
 people=['ali','negin','negar','reza','hossein','mehrdad','X']
 
 letter_asc=list('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
@@ -15,4 +16,21 @@ def sortedlist(mylist :list, l=0):
     return sortedlist
 
 
-print(sortedlist(people))
+print('sorted people by 1st solution:\n',sortedlist(people))
+print('----------------------------------------------------------------')
+
+# 2nd solution: with knowing default letter ranking:
+people=['ali','negin','negar','reza','hossein','mehrdad','X']
+
+def sortedlist(mylist :list):
+    m=0
+    while m<len(mylist)-1:
+        for n in range(0,len(mylist)-1):
+            if mylist[n]>mylist[n+1]:
+                mylist[n] , mylist[n+1]= mylist[n+1] , mylist[n]
+        m=m+1
+    return mylist
+
+
+print('sorted people by 2nd solution:\n',sortedlist(people))
+print('----------------------------------------------------------------')
